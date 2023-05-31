@@ -4,7 +4,7 @@
 <img src="https://res.cloudinary.com/ghazni/image/upload/v1678467366/portfolio_6_tg19nz.png" alt="banner"/>
 
 ## Demo
-[Demo](https://uxui-profile.netlify.app/)
+[Demo](https://fatikhjansblog.netlify.app/)
 
 ## Features
 
