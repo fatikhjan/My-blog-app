@@ -33,13 +33,13 @@ const Footer = () => {
           fullName: name,
         }),
       });
-      let resJson = await res.json();
       if (res.status === 200) {
+        let resJson = await res.json();
         setName("");
         setEmail("");
         setMessage("");
-
         setRes("User created successfully");
+        console.log(resJson);
       } else {
         setRes("Some error occured");
       }
