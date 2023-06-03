@@ -128,8 +128,8 @@ const Footer = () => {
           </Fade>
         </Profile>
         <Form onSubmit={handleSubmit}>
-          {
-            <Slide direction="right">
+
+          <Slide direction="right">
               <form>
                 <div className="name">
               <span>
@@ -156,7 +156,6 @@ const Footer = () => {
               </form>
               <div className="message"> {res ? <p>{res}</p> : null} </div>
             </Slide>
-          }
       </Form>
     </Container>
   );
