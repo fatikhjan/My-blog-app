@@ -28,9 +28,9 @@ const Footer = () => {
       let res = await fetch("https://my-blogback.up.railway.app/api/sendMessage", {
         method: "POST",
         body: JSON.stringify({
-          name: name,
-          email: email,
+          sender: email,
           message: message,
+          fullName: name,
         }),
       });
       // let resJson = await res.json();
