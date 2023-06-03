@@ -32,6 +32,7 @@ const Footer = () => {
           message: message,
           fullName: name,
         }),
+        head:"Content-Type : application/json"
       });
       if (res.status === 200) {
         let resJson = await res.json();
