@@ -19,6 +19,7 @@ const Footer = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [res, setRes] = useState("");
 
 
   let handleSubmit = async (e) => {
@@ -37,9 +38,10 @@ const Footer = () => {
         setName("");
         setEmail("");
         setMessage("");
-        setMessage("User created successfully");
+
+        setRes("User created successfully");
       } else {
-        setMessage("Some error occured");
+        setRes("Some error occured");
       }
     } catch (err) {
       console.log(err);
@@ -118,41 +120,43 @@ const Footer = () => {
               </span>
             </Zoom>
           </div>
-        </div>
-        <Fade>
-          <ArrowUp onClick={scrollUp}>
-            <AiOutlineArrowUp />
-          </ArrowUp>
-        </Fade>
-      </Profile>
-      <Form onSumbit= {handleSubmit}>
-        <Slide direction="right">
-          <form>
-            <div className="name">
+          </div>
+          <Fade>
+            <ArrowUp onClick={scrollUp}>
+              <AiOutlineArrowUp/>
+            </ArrowUp>
+          </Fade>
+        </Profile>
+        <Form onSubmit={handleSubmit}>
+          {
+            <Slide direction="right">
+              <form>
+                <div className="name">
               <span>
                 <CgProfile/>
               </span>
-              <input value={name} type="text" placeholder="Fullname..."
-                     onChange={(e) => setName(e.target.value)}/>
-            </div>
-            <div className="email">
+                  <input value={name} type="text" placeholder="Fullname..."
+                         onChange={(e) => setName(e.target.value)}/>
+                </div>
+                <div className="email">
               <span>
                 <MdAlternateEmail/>
               </span>
-              <input value={email} type="email" placeholder="Email..."
-                     onChange={(e) => setEmail(e.target.value)}/>
-            </div>
-            <div className="message">
+                  <input value={email} type="email" placeholder="Email..."
+                         onChange={(e) => setEmail(e.target.value)}/>
+                </div>
+                <div className="message">
               <span className="messageIcon">
                 <FiMail/>
               </span>
-              <textarea value={message} cols="30" rows="10" placeholder="Message..."
-                        onChange={(e) => setMessage(e.target.value)}></textarea>
-            </div>
-            <button type={"submit"}>Submit</button>
-          </form>
-          <div className="message"> {message ? <p>{message}</p> : null} </div>
-        </Slide>
+                  <textarea value={message} cols="30" rows="10" placeholder="Message..."
+                            onChange={(e) => setMessage(e.target.value)}></textarea>
+                </div>
+                <button type={"submit"}>Submit</button>
+              </form>
+              <div className="message"> {res ? <p>{res}</p> : null} </div>
+            </Slide>
+          }
       </Form>
     </Container>
   );
