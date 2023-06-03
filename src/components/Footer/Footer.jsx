@@ -35,7 +35,7 @@ const Footer = () => {
         head:"Content-Type: application/json"
       });
       if (res.status === 200) {
-        let resJson = await res.json();
+        // let resJson = await res.json();
         setName("");
         setEmail("");
         setMessage("");
