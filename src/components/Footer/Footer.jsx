@@ -32,7 +32,7 @@ const Footer = () => {
           message: message,
         }),
       });
-      let resJson = await res.json();
+      // let resJson = await res.json();
       if (res.status === 200) {
         setName("");
         setEmail("");
@@ -132,19 +132,22 @@ const Footer = () => {
               <span>
                 <CgProfile/>
               </span>
-              <input value={name} type="text" placeholder="Fullname..." onChange={setName}/>
+              <input value={name} type="text" placeholder="Fullname..."
+                     onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail/>
               </span>
-              <input value={email} type="email" placeholder="Email..." onChange={setEmail}/>
+              <input value={email} type="email" placeholder="Email..."
+                     onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail/>
               </span>
-              <textarea value={message} cols="30" rows="10" placeholder="Message..." onChange={setMessage}></textarea>
+              <textarea value={message} cols="30" rows="10" placeholder="Message..."
+                        onChange={(e) => setMessage(e.target.value)}></textarea>
             </div>
             <button type={"submit"}>Submit</button>
           </form>
