@@ -32,7 +32,7 @@ const Footer = () => {
           message: message,
           fullName: name,
         }),
-        head:"Content-Type : application/json"
+        head:"Content-Type: application/json"
       });
       if (res.status === 200) {
         let resJson = await res.json();
@@ -40,7 +40,6 @@ const Footer = () => {
         setEmail("");
         setMessage("");
         setRes("User created successfully");
-        console.log(resJson);
       } else {
         setRes("Some error occured");
       }
