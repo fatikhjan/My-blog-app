@@ -36,7 +36,7 @@ const Footer = () => {
       if (res.status === 200) {
         setName("");
         setEmail("");
-        setMobileNumber("");
+        setMessage("");
         setMessage("User created successfully");
       } else {
         setMessage("Some error occured");
