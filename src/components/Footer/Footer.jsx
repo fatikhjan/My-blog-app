@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { MdAlternateEmail } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { HiOutlineMailOpen } from "react-icons/hi";
-import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
-import { FiMail, FiPhoneCall } from "react-icons/fi";
-import { Slide, Zoom, Fade } from "react-awesome-reveal";
+import {MdAlternateEmail} from "react-icons/md";
+import {CgProfile} from "react-icons/cg";
+import {HiOutlineMailOpen} from "react-icons/hi";
+import {AiFillGithub, AiFillLinkedin, AiOutlineArrowUp} from "react-icons/ai";
+import {BsFacebook, BsSlack} from "react-icons/bs";
+import {FiMail, FiPhoneCall} from "react-icons/fi";
+import {Fade, Slide, Zoom} from "react-awesome-reveal";
 
 const Footer = () => {
   const scrollUp = () => {
@@ -15,44 +15,76 @@ const Footer = () => {
       behavior: "smooth",
     });
   };
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await fetch("https://my-blogback.up.railway.app/api/sendMessage", {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+        }),
+      });
+      let resJson = await res.json();
+      if (res.status === 200) {
+        setName("");
+        setEmail("");
+        setMobileNumber("");
+        setMessage("User created successfully");
+      } else {
+        setMessage("Some error occured");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   return (
-    <Container id="footer">
-      <Profile>
-        <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
-        </Slide>
-        <div className="address">
-          <Slide direction="left">
-            <h1>Address:</h1>
+      <Container id="footer">
+        <Profile>
+          <Slide direction="left" delay={1}>
+            <h1>Portfolio</h1>
           </Slide>
-          <Slide direction="left">
-            <p>Tashkent city, Olmazor dst,Uzbekistan</p>
-          </Slide>
-        </div>
-        <div className="links">
-          <Slide direction="left">
-            <h1>Contact me directly:</h1>
-          </Slide>
-          <div>
+          <div className="address">
+            <Slide direction="left">
+              <h1>Address:</h1>
+            </Slide>
+            <Slide direction="left">
+              <p>Tashkent city, Olmazor dst,Uzbekistan</p>
+            </Slide>
+          </div>
+          <div className="links">
+            <Slide direction="left">
+              <h1>Contact me directly:</h1>
+            </Slide>
+            <div>
             <span>
-              <FiPhoneCall />
+              <FiPhoneCall/>
             </span>
-            <Slide direction="left">
-              <a href="tel:+998977523052">+998977523052</a>
-            </Slide>
-          </div>
-          <div>
-            <Slide direction="left">
+              <Slide direction="left">
+                <a href="tel:+998977523052">+998977523052</a>
+              </Slide>
+            </div>
+            <div>
+              <Slide direction="left">
               <span>
-                <HiOutlineMailOpen />
+                <HiOutlineMailOpen/>
               </span>
-            </Slide>
-            <Slide>
-              <a href="mailto:muhammad2004fotih@gmail.com">muhammad2004fotih@gmail.com</a>
-            </Slide>
+              </Slide>
+              <Slide>
+                <a href="mailto:muhammad2004fotih@gmail.com">muhammad2004fotih@gmail.com</a>
+              </Slide>
+            </div>
           </div>
-        </div>
-        <div className="profiles">
+          <div className="profiles">
           <Slide direction="left">
             <h1>Check my profiles</h1>
           </Slide>
@@ -93,29 +125,30 @@ const Footer = () => {
           </ArrowUp>
         </Fade>
       </Profile>
-      <Form>
+      <Form onSumbit= {handleSubmit}>
         <Slide direction="right">
           <form>
             <div className="name">
               <span>
-                <CgProfile />
+                <CgProfile/>
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input value={name} type="text" placeholder="Fullname..." onChange={setName}/>
             </div>
             <div className="email">
               <span>
-                <MdAlternateEmail />
+                <MdAlternateEmail/>
               </span>
-              <input type="email" placeholder="Email..." />
+              <input value={email} type="email" placeholder="Email..." onChange={setEmail}/>
             </div>
             <div className="message">
               <span className="messageIcon">
-                <FiMail />
+                <FiMail/>
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea value={message} cols="30" rows="10" placeholder="Message..." onChange={setMessage}></textarea>
             </div>
-            <button>Submit</button>
+            <button type={"submit"}>Submit</button>
           </form>
+          <div className="message"> {message ? <p>{message}</p> : null} </div>
         </Slide>
       </Form>
     </Container>
