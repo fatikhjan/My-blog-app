@@ -32,7 +32,7 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="/https://t.me/Muhammad_ul_fotih">
+                <a href="https://t.me/Muhammad_ul_fotih">
                   <GiEarthAmerica />
                 </a>
               </span>
