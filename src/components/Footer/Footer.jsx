@@ -93,7 +93,7 @@ const Footer = () => {
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/https://github.com/fatikhjan">
+                <a href="https://github.com/fatikhjan">
                   <AiFillGithub />
                 </a>
               </span>
@@ -107,7 +107,7 @@ const Footer = () => {
             </Zoom>
             <Zoom>
               <span>
-                <a href="/https://www.facebook.com/profile.php?id=100039842692366">
+                <a href="https://www.facebook.com/profile.php?id=100039842692366">
                   <BsFacebook />
                 </a>
               </span>
