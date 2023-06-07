@@ -100,7 +100,7 @@ const Footer = () => {
             </Zoom>
             <Zoom>
               <span>
-                <a href="/https://www.linkedin.com/in/fatikhjan/">
+                <a href="https://www.linkedin.com/in/fatikhjan/">
                   <AiFillLinkedin />
                 </a>
               </span>
@@ -114,7 +114,7 @@ const Footer = () => {
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a href="https://t.me/Muhammad_ul_fotih">
                   <BsSlack />
                 </a>
               </span>
