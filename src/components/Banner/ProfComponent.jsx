@@ -48,7 +48,7 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="https://pbs.twimg.com/profile_images/1658183116836462683/9jFDlFZb_400x400.jpg"
+            src="https://pbs.twimg.com/profile_images/1672910234384474112/2rQnkGmk_400x400.jpg"
             alt="profile"
           />
         </Profile>
