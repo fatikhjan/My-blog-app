@@ -16,10 +16,6 @@ let data = [
     {
         img : "https://robokassa.com/upload/medialibrary/12e/12ec7d81223bf2b07bf44e4e36333677.jpg",
         disc : "This Project For Manage System Of FastFood via Telegram Bot"
-    },
-    {
-        img : "https://www.ixbt.com/img/n1/news/2020/3/3/twitter-logo_large.jpg",
-        disc : "This Project is Clone Of Twiiter"
     }
 ];
 
